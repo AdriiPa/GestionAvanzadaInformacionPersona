@@ -47,20 +47,22 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.tbPreferencias = new System.Windows.Forms.TabPage();
-            this.tbVisualizacion = new System.Windows.Forms.TabPage();
-            this.lblSubs = new System.Windows.Forms.Label();
-            this.chSubscripcion = new System.Windows.Forms.CheckBox();
-            this.chbHobbies = new System.Windows.Forms.CheckedListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbPais = new System.Windows.Forms.ComboBox();
-            this.lbPais = new System.Windows.Forms.Label();
             this.lbSatisfaccion = new System.Windows.Forms.Label();
+            this.lbPais = new System.Windows.Forms.Label();
+            this.cmbPais = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chbHobbies = new System.Windows.Forms.CheckedListBox();
+            this.chSubscripcion = new System.Windows.Forms.CheckBox();
+            this.lblSubs = new System.Windows.Forms.Label();
+            this.tbVisualizacion = new System.Windows.Forms.TabPage();
+            this.trkbSatisfaccion = new System.Windows.Forms.TrackBar();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbDatosPers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEdad)).BeginInit();
             this.panel2.SuspendLayout();
             this.tbPreferencias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbSatisfaccion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -250,6 +252,7 @@
             // tbPreferencias
             // 
             this.tbPreferencias.BackColor = System.Drawing.Color.LightGreen;
+            this.tbPreferencias.Controls.Add(this.trkbSatisfaccion);
             this.tbPreferencias.Controls.Add(this.lbSatisfaccion);
             this.tbPreferencias.Controls.Add(this.lbPais);
             this.tbPreferencias.Controls.Add(this.cmbPais);
@@ -264,58 +267,23 @@
             this.tbPreferencias.TabIndex = 1;
             this.tbPreferencias.Text = "Preferencias";
             // 
-            // tbVisualizacion
+            // lbSatisfaccion
             // 
-            this.tbVisualizacion.Location = new System.Drawing.Point(4, 24);
-            this.tbVisualizacion.Name = "tbVisualizacion";
-            this.tbVisualizacion.Size = new System.Drawing.Size(789, 304);
-            this.tbVisualizacion.TabIndex = 2;
-            this.tbVisualizacion.Text = "Visualizacion";
-            this.tbVisualizacion.UseVisualStyleBackColor = true;
+            this.lbSatisfaccion.AutoSize = true;
+            this.lbSatisfaccion.Location = new System.Drawing.Point(532, 41);
+            this.lbSatisfaccion.Name = "lbSatisfaccion";
+            this.lbSatisfaccion.Size = new System.Drawing.Size(235, 15);
+            this.lbSatisfaccion.TabIndex = 6;
+            this.lbSatisfaccion.Text = "Nivel de satisfaccion con el servicio";
             // 
-            // lblSubs
+            // lbPais
             // 
-            this.lblSubs.AutoSize = true;
-            this.lblSubs.Location = new System.Drawing.Point(7, 7);
-            this.lblSubs.Name = "lblSubs";
-            this.lblSubs.Size = new System.Drawing.Size(152, 15);
-            this.lblSubs.TabIndex = 0;
-            this.lblSubs.Text = "¿Sucribirse al boletin?";
-            // 
-            // chSubscripcion
-            // 
-            this.chSubscripcion.AutoSize = true;
-            this.chSubscripcion.Location = new System.Drawing.Point(166, 7);
-            this.chSubscripcion.Name = "chSubscripcion";
-            this.chSubscripcion.Size = new System.Drawing.Size(106, 19);
-            this.chSubscripcion.TabIndex = 1;
-            this.chSubscripcion.Text = "Subscribirse";
-            this.chSubscripcion.UseVisualStyleBackColor = true;
-            // 
-            // chbHobbies
-            // 
-            this.chbHobbies.FormattingEnabled = true;
-            this.chbHobbies.Items.AddRange(new object[] {
-            "Deportes",
-            "Juegos Online",
-            "Cine",
-            "Cocina",
-            "Viajar",
-            "Fiesta",
-            "Fotografia"});
-            this.chbHobbies.Location = new System.Drawing.Point(10, 59);
-            this.chbHobbies.Name = "chbHobbies";
-            this.chbHobbies.Size = new System.Drawing.Size(184, 116);
-            this.chbHobbies.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Hobbies o Intereses";
+            this.lbPais.AutoSize = true;
+            this.lbPais.Location = new System.Drawing.Point(273, 41);
+            this.lbPais.Name = "lbPais";
+            this.lbPais.Size = new System.Drawing.Size(130, 15);
+            this.lbPais.TabIndex = 5;
+            this.lbPais.Text = "Pais de residencia:";
             // 
             // cmbPais
             // 
@@ -336,23 +304,67 @@
             this.cmbPais.Size = new System.Drawing.Size(121, 23);
             this.cmbPais.TabIndex = 4;
             // 
-            // lbPais
+            // label1
             // 
-            this.lbPais.AutoSize = true;
-            this.lbPais.Location = new System.Drawing.Point(273, 41);
-            this.lbPais.Name = "lbPais";
-            this.lbPais.Size = new System.Drawing.Size(130, 15);
-            this.lbPais.TabIndex = 5;
-            this.lbPais.Text = "Pais de residencia:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Hobbies o Intereses";
             // 
-            // lbSatisfaccion
+            // chbHobbies
             // 
-            this.lbSatisfaccion.AutoSize = true;
-            this.lbSatisfaccion.Location = new System.Drawing.Point(532, 41);
-            this.lbSatisfaccion.Name = "lbSatisfaccion";
-            this.lbSatisfaccion.Size = new System.Drawing.Size(235, 15);
-            this.lbSatisfaccion.TabIndex = 6;
-            this.lbSatisfaccion.Text = "Nivel de satisfaccion con el servicio";
+            this.chbHobbies.FormattingEnabled = true;
+            this.chbHobbies.Items.AddRange(new object[] {
+            "Deportes",
+            "Juegos Online",
+            "Cine",
+            "Cocina",
+            "Viajar",
+            "Fiesta",
+            "Fotografia"});
+            this.chbHobbies.Location = new System.Drawing.Point(10, 59);
+            this.chbHobbies.Name = "chbHobbies";
+            this.chbHobbies.Size = new System.Drawing.Size(184, 116);
+            this.chbHobbies.TabIndex = 2;
+            // 
+            // chSubscripcion
+            // 
+            this.chSubscripcion.AutoSize = true;
+            this.chSubscripcion.Location = new System.Drawing.Point(166, 7);
+            this.chSubscripcion.Name = "chSubscripcion";
+            this.chSubscripcion.Size = new System.Drawing.Size(106, 19);
+            this.chSubscripcion.TabIndex = 1;
+            this.chSubscripcion.Text = "Subscribirse";
+            this.chSubscripcion.UseVisualStyleBackColor = true;
+            // 
+            // lblSubs
+            // 
+            this.lblSubs.AutoSize = true;
+            this.lblSubs.Location = new System.Drawing.Point(7, 7);
+            this.lblSubs.Name = "lblSubs";
+            this.lblSubs.Size = new System.Drawing.Size(152, 15);
+            this.lblSubs.TabIndex = 0;
+            this.lblSubs.Text = "¿Sucribirse al boletin?";
+            // 
+            // tbVisualizacion
+            // 
+            this.tbVisualizacion.Location = new System.Drawing.Point(4, 24);
+            this.tbVisualizacion.Name = "tbVisualizacion";
+            this.tbVisualizacion.Size = new System.Drawing.Size(789, 304);
+            this.tbVisualizacion.TabIndex = 2;
+            this.tbVisualizacion.Text = "Visualizacion";
+            this.tbVisualizacion.UseVisualStyleBackColor = true;
+            // 
+            // trkbSatisfaccion
+            // 
+            this.trkbSatisfaccion.Location = new System.Drawing.Point(535, 79);
+            this.trkbSatisfaccion.Minimum = 1;
+            this.trkbSatisfaccion.Name = "trkbSatisfaccion";
+            this.trkbSatisfaccion.Size = new System.Drawing.Size(232, 45);
+            this.trkbSatisfaccion.TabIndex = 7;
+            this.trkbSatisfaccion.Value = 1;
             // 
             // Form1
             // 
@@ -372,6 +384,7 @@
             this.panel2.PerformLayout();
             this.tbPreferencias.ResumeLayout(false);
             this.tbPreferencias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbSatisfaccion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,6 +418,7 @@
         private System.Windows.Forms.Label lbSatisfaccion;
         private System.Windows.Forms.Label lbPais;
         private System.Windows.Forms.ComboBox cmbPais;
+        private System.Windows.Forms.TrackBar trkbSatisfaccion;
     }
 }
 
