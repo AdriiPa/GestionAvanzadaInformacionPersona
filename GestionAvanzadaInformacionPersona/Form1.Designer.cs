@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbDatosPers = new System.Windows.Forms.TabPage();
@@ -47,6 +48,7 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.tbPreferencias = new System.Windows.Forms.TabPage();
+            this.trkbSatisfaccion = new System.Windows.Forms.TrackBar();
             this.lbSatisfaccion = new System.Windows.Forms.Label();
             this.lbPais = new System.Windows.Forms.Label();
             this.cmbPais = new System.Windows.Forms.ComboBox();
@@ -55,7 +57,9 @@
             this.chSubscripcion = new System.Windows.Forms.CheckBox();
             this.lblSubs = new System.Windows.Forms.Label();
             this.tbVisualizacion = new System.Windows.Forms.TabPage();
-            this.trkbSatisfaccion = new System.Windows.Forms.TrackBar();
+            this.pcbImagenPerfil = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbHora = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbDatosPers.SuspendLayout();
@@ -63,6 +67,8 @@
             this.panel2.SuspendLayout();
             this.tbPreferencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trkbSatisfaccion)).BeginInit();
+            this.tbVisualizacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagenPerfil)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -267,6 +273,15 @@
             this.tbPreferencias.TabIndex = 1;
             this.tbPreferencias.Text = "Preferencias";
             // 
+            // trkbSatisfaccion
+            // 
+            this.trkbSatisfaccion.Location = new System.Drawing.Point(535, 79);
+            this.trkbSatisfaccion.Minimum = 1;
+            this.trkbSatisfaccion.Name = "trkbSatisfaccion";
+            this.trkbSatisfaccion.Size = new System.Drawing.Size(232, 45);
+            this.trkbSatisfaccion.TabIndex = 7;
+            this.trkbSatisfaccion.Value = 1;
+            // 
             // lbSatisfaccion
             // 
             this.lbSatisfaccion.AutoSize = true;
@@ -350,21 +365,38 @@
             // 
             // tbVisualizacion
             // 
+            this.tbVisualizacion.BackColor = System.Drawing.Color.LightGreen;
+            this.tbVisualizacion.Controls.Add(this.lbHora);
+            this.tbVisualizacion.Controls.Add(this.pcbImagenPerfil);
             this.tbVisualizacion.Location = new System.Drawing.Point(4, 24);
             this.tbVisualizacion.Name = "tbVisualizacion";
             this.tbVisualizacion.Size = new System.Drawing.Size(789, 304);
             this.tbVisualizacion.TabIndex = 2;
             this.tbVisualizacion.Text = "Visualizacion";
-            this.tbVisualizacion.UseVisualStyleBackColor = true;
             // 
-            // trkbSatisfaccion
+            // pcbImagenPerfil
             // 
-            this.trkbSatisfaccion.Location = new System.Drawing.Point(535, 79);
-            this.trkbSatisfaccion.Minimum = 1;
-            this.trkbSatisfaccion.Name = "trkbSatisfaccion";
-            this.trkbSatisfaccion.Size = new System.Drawing.Size(232, 45);
-            this.trkbSatisfaccion.TabIndex = 7;
-            this.trkbSatisfaccion.Value = 1;
+            this.pcbImagenPerfil.InitialImage = null;
+            this.pcbImagenPerfil.Location = new System.Drawing.Point(5, 3);
+            this.pcbImagenPerfil.Name = "pcbImagenPerfil";
+            this.pcbImagenPerfil.Size = new System.Drawing.Size(163, 145);
+            this.pcbImagenPerfil.TabIndex = 0;
+            this.pcbImagenPerfil.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            // 
+            // lbHora
+            // 
+            this.lbHora.AutoSize = true;
+            this.lbHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHora.Location = new System.Drawing.Point(276, 3);
+            this.lbHora.Name = "lbHora";
+            this.lbHora.Size = new System.Drawing.Size(283, 46);
+            this.lbHora.TabIndex = 1;
+            this.lbHora.Text = "Hora: 00:00:00";
             // 
             // Form1
             // 
@@ -385,6 +417,9 @@
             this.tbPreferencias.ResumeLayout(false);
             this.tbPreferencias.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trkbSatisfaccion)).EndInit();
+            this.tbVisualizacion.ResumeLayout(false);
+            this.tbVisualizacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagenPerfil)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,6 +454,9 @@
         private System.Windows.Forms.Label lbPais;
         private System.Windows.Forms.ComboBox cmbPais;
         private System.Windows.Forms.TrackBar trkbSatisfaccion;
+        private System.Windows.Forms.PictureBox pcbImagenPerfil;
+        private System.Windows.Forms.Label lbHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
