@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btSalir = new System.Windows.Forms.Button();
+            this.btLimpiar = new System.Windows.Forms.Button();
+            this.btGuardar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbDatosPers = new System.Windows.Forms.TabPage();
             this.nudEdad = new System.Windows.Forms.NumericUpDown();
@@ -57,9 +61,11 @@
             this.chSubscripcion = new System.Windows.Forms.CheckBox();
             this.lblSubs = new System.Windows.Forms.Label();
             this.tbVisualizacion = new System.Windows.Forms.TabPage();
+            this.lbHora = new System.Windows.Forms.Label();
             this.pcbImagenPerfil = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbHora = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtDatosUser = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbDatosPers.SuspendLayout();
@@ -74,12 +80,55 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.Controls.Add(this.btSalir);
+            this.panel1.Controls.Add(this.btLimpiar);
+            this.panel1.Controls.Add(this.btGuardar);
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 1;
+            // 
+            // btSalir
+            // 
+            this.btSalir.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalir.ForeColor = System.Drawing.Color.LightBlue;
+            this.btSalir.Location = new System.Drawing.Point(384, 403);
+            this.btSalir.Name = "btSalir";
+            this.btSalir.Size = new System.Drawing.Size(130, 35);
+            this.btSalir.TabIndex = 3;
+            this.btSalir.Text = "SALIR";
+            this.btSalir.UseVisualStyleBackColor = false;
+            this.btSalir.Click += new System.EventHandler(this.btSalir_Click);
+            // 
+            // btLimpiar
+            // 
+            this.btLimpiar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLimpiar.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btLimpiar.Location = new System.Drawing.Point(520, 403);
+            this.btLimpiar.Name = "btLimpiar";
+            this.btLimpiar.Size = new System.Drawing.Size(131, 35);
+            this.btLimpiar.TabIndex = 2;
+            this.btLimpiar.Text = "LIMPIAR";
+            this.btLimpiar.UseVisualStyleBackColor = false;
+            this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
+            // 
+            // btGuardar
+            // 
+            this.btGuardar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btGuardar.Location = new System.Drawing.Point(657, 403);
+            this.btGuardar.Name = "btGuardar";
+            this.btGuardar.Size = new System.Drawing.Size(131, 35);
+            this.btGuardar.TabIndex = 1;
+            this.btGuardar.Text = "GUARDAR";
+            this.btGuardar.UseVisualStyleBackColor = false;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // tabControl1
             // 
@@ -144,6 +193,7 @@
             // mcEdad
             // 
             this.mcEdad.Location = new System.Drawing.Point(164, 105);
+            this.mcEdad.MaxSelectionCount = 1;
             this.mcEdad.Name = "mcEdad";
             this.mcEdad.TabIndex = 8;
             // 
@@ -312,8 +362,17 @@
             "Portugal",
             "Andorra",
             "Marruecos"});
-            this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPais.FormattingEnabled = true;
+            this.cmbPais.Items.AddRange(new object[] {
+            "España",
+            "Francia",
+            "Reino Unido",
+            "Estados Unidos",
+            "Colombia ",
+            "Argentina",
+            "Portugal",
+            "Andorra",
+            "Marruecos"});
             this.cmbPais.Location = new System.Drawing.Point(276, 59);
             this.cmbPais.Name = "cmbPais";
             this.cmbPais.Size = new System.Drawing.Size(121, 23);
@@ -330,6 +389,7 @@
             // 
             // chbHobbies
             // 
+            this.chbHobbies.CheckOnClick = true;
             this.chbHobbies.FormattingEnabled = true;
             this.chbHobbies.Items.AddRange(new object[] {
             "Deportes",
@@ -366,6 +426,7 @@
             // tbVisualizacion
             // 
             this.tbVisualizacion.BackColor = System.Drawing.Color.LightGreen;
+            this.tbVisualizacion.Controls.Add(this.txtDatosUser);
             this.tbVisualizacion.Controls.Add(this.lbHora);
             this.tbVisualizacion.Controls.Add(this.pcbImagenPerfil);
             this.tbVisualizacion.Location = new System.Drawing.Point(4, 24);
@@ -373,20 +434,6 @@
             this.tbVisualizacion.Size = new System.Drawing.Size(789, 304);
             this.tbVisualizacion.TabIndex = 2;
             this.tbVisualizacion.Text = "Visualizacion";
-            // 
-            // pcbImagenPerfil
-            // 
-            this.pcbImagenPerfil.InitialImage = null;
-            this.pcbImagenPerfil.Location = new System.Drawing.Point(5, 3);
-            this.pcbImagenPerfil.Name = "pcbImagenPerfil";
-            this.pcbImagenPerfil.Size = new System.Drawing.Size(163, 145);
-            this.pcbImagenPerfil.TabIndex = 0;
-            this.pcbImagenPerfil.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
             // 
             // lbHora
             // 
@@ -398,6 +445,33 @@
             this.lbHora.TabIndex = 1;
             this.lbHora.Text = "Hora: 00:00:00";
             // 
+            // pcbImagenPerfil
+            // 
+            this.pcbImagenPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pcbImagenPerfil.Image")));
+            this.pcbImagenPerfil.InitialImage = null;
+            this.pcbImagenPerfil.Location = new System.Drawing.Point(5, 3);
+            this.pcbImagenPerfil.Name = "pcbImagenPerfil";
+            this.pcbImagenPerfil.Size = new System.Drawing.Size(163, 145);
+            this.pcbImagenPerfil.TabIndex = 0;
+            this.pcbImagenPerfil.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // txtDatosUser
+            // 
+            this.txtDatosUser.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtDatosUser.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.txtDatosUser.Location = new System.Drawing.Point(195, 52);
+            this.txtDatosUser.Multiline = true;
+            this.txtDatosUser.Name = "txtDatosUser";
+            this.txtDatosUser.ReadOnly = true;
+            this.txtDatosUser.Size = new System.Drawing.Size(497, 177);
+            this.txtDatosUser.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +479,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Gestion Avanzada de informacion Personal";
             this.panel1.ResumeLayout(false);
@@ -457,6 +532,11 @@
         private System.Windows.Forms.PictureBox pcbImagenPerfil;
         private System.Windows.Forms.Label lbHora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btGuardar;
+        private System.Windows.Forms.Button btSalir;
+        private System.Windows.Forms.Button btLimpiar;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txtDatosUser;
     }
 }
 
